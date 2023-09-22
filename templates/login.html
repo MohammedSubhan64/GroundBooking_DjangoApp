@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-signUp</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?cricket,football')  no-repeat center center/cover;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form-wrapper sign-up">
+            <form action="register" method="post">
+                {% csrf_token %}
+                <h2>Sign up</h2>
+                <div class="input-group">
+                    <input type="text" name="username" required>
+                    <label for="">UserName</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password1" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password2" required>
+                    <label for=""> Confirm Password</label>
+                </div>
+                <!-- <div class="forgot-pass">
+                    <a href="#">Forgot password?</a>
+                </div> -->
+                <!-- <button class="btn" type="submit">Sign Up</button> -->
+                <input type="submit" class="btn " value="Sign UP">
+                <div class="sign-link">
+                    <p>Already have an account? <a href="#" class="signin-link">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-wrapper sign-in">
+            <form method="post">
+                {% csrf_token %}
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="text" id="username" name="user_name" required>
+                    <label for="">UserName</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password1" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <!-- <div class="forgot-pass">
+                    <a href="#">Forgot password?</a>
+                </div> -->
+                <button class="btn" type="submit">Login</button>
+                <!-- <input type="submit" class="btn" value="Login"> -->
+                <div class="sign-link">
+                    <p>Don't have an account? <a href="#" class="signup-link">Sign Up</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+
+</html>
